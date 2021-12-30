@@ -4,7 +4,6 @@ package com.example.rest_api2.controllers;
 
 import com.example.rest_api2.models.Country;
 import com.example.rest_api2.services.CountryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
