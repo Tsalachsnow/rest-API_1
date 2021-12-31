@@ -26,7 +26,7 @@ public class CountryController {
     public ResponseEntity<Country> getCountryById(@PathVariable(value = "id") Long id){
         try {
             Country country = countryService.getCountryById(id);
-            return new ResponseEntity<Country>(country, HttpStatus.OK);
+            return new ResponseEntity<Country>(country, HttpStatus.FOUND);
         }catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -36,7 +36,7 @@ public class CountryController {
     public ResponseEntity<Country> getCountryByName(@RequestParam(value = "name") String countryName){
         try {
             Country country = countryService.getCountryByName(countryName);
-            return new ResponseEntity<Country>(country, HttpStatus.OK);
+            return new ResponseEntity<Country>(country, HttpStatus.FOUND);
         }catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
