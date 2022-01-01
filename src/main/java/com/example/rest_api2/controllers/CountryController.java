@@ -22,6 +22,7 @@ public class CountryController{
 
     @GetMapping("/getcountries")
     public List<Country> getCountries() {
+
         return countryService.getAllCountries();
     }
 
@@ -47,6 +48,7 @@ public class CountryController{
 
     @PostMapping("/addcountry")
     public Country addCountry(@RequestBody Country country){
+
         return countryService.addCountry(country);
     }
 

@@ -58,7 +58,7 @@ class CountryControllerTest {
     @Test
     @Order(3)
     void getCountryByName() {
-        mycountries.add(new Country(2L, "USA", "Washington"));
+        country = new Country(2L, "USA", "Washington");
         String countryName = "USA";
         when(countryService.getCountryByName(countryName)).thenReturn(country);
         ResponseEntity<Country> res = countryController.getCountryByName(countryName);
