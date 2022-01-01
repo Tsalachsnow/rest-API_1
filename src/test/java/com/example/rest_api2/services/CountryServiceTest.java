@@ -4,18 +4,15 @@ package com.example.rest_api2.services;
 import com.example.rest_api2.models.Country;
 import com.example.rest_api2.repositories.CountryRepository;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-//@ExtendWith(MockitoExtension.class)
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(classes = {CountryServiceTest.class})
 class CountryServiceTest {
@@ -35,7 +32,7 @@ class CountryServiceTest {
     @Test
     @Order(1)
     void getAllCountries() {
-        List<Country> mycountries = new ArrayList<Country>();
+        mycountries = new ArrayList<Country>();
         mycountries.add(new Country(1, "India", "Delhi"));
         mycountries.add(new Country(2, "USA", "Washington"));
         when(countryRepo.findAll()).thenReturn(mycountries);//mocking statement
@@ -46,7 +43,7 @@ class CountryServiceTest {
     @Test
     @Order(2)
     void getCountryById() {
-        List<Country> mycountries = new ArrayList<Country>();
+        mycountries = new ArrayList<Country>();
         mycountries.add(new Country(1L, "India", "Delhi"));
         mycountries.add(new Country(2L, "USA", "Washington"));
         Long countryID = 2L;
@@ -57,7 +54,7 @@ class CountryServiceTest {
     @Test
     @Order(3)
     void getCountryByName() {
-        List<Country> mycountries = new ArrayList<Country>();
+        mycountries = new ArrayList<Country>();
         mycountries.add(new Country(1L, "India", "Delhi"));
         mycountries.add(new Country(2L, "USA", "Washington"));
         String countryName = "India";

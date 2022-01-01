@@ -4,14 +4,17 @@ package com.example.rest_api2.controllers;
 
 import com.example.rest_api2.models.Country;
 import com.example.rest_api2.services.CountryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class CountryController {
-    final CountryService countryService;
+public class CountryController{
+
+    final
+    CountryService countryService;
 
     public CountryController(CountryService countryService) {
         this.countryService = countryService;
